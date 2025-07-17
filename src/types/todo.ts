@@ -11,6 +11,7 @@ export interface CreateTodoRequest {
   userId: number;
   title: string;
   completed: boolean;
+  id: number;
 }
 
 // Response type for paginated todos
