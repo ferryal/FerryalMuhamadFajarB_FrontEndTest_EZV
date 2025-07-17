@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo App - Modern Task Management
 
-## Getting Started
+A modern, responsive todo application built with Next.js 15, featuring a beautiful UI and advanced state management with Redux Toolkit Query.
 
-First, run the development server:
+## ✨ Features
+
+- **Create and manage todos** with an intuitive interface
+- **Real-time data synchronization** using RTK Query
+- **Pagination support** (10 items per page)
+- **Hybrid rendering strategy** combining SSR and ISR
+- **Beautiful modern UI** with light theme design
+- **TypeScript** for type safety
+- **Responsive design** that works on all devices
+- **Professional components** with shadcn/ui inspired styling
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **State Management**: Redux Toolkit Query (RTK Query)
+- **Language**: TypeScript
+- **Styling**: CSS Modules with CSS Variables
+- **API**: JSONPlaceholder REST API
+- **Rendering**: Hybrid SSR/ISR implementation
+- **UI Components**: Custom components with modern design system
+
+## 🏗️ Architecture
+
+### Rendering Strategy
+
+- **ISR (Incremental Static Regeneration)**: Pre-renders first 5 pages at build time with 60-second revalidation
+- **SSR (Server-Side Rendering)**: Fresh data fetching for dynamic requests
+- **CSR (Client-Side Rendering)**: RTK Query handles client-side updates and caching
+
+### State Management
+
+- **RTK Query** for server state management
+- **Automatic caching** and background refetching
+- **Optimistic updates** for better UX
+- **Error handling** with proper fallbacks
+
+## 📦 Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd ezv-app-todo
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🔧 Available Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and CSS variables
+│   ├── layout.tsx           # Root layout with Redux provider
+│   └── page.tsx             # Main todo page with hybrid rendering
+├── components/
+│   ├── TodoForm.tsx         # Form component for creating todos
+│   └── TodoList.tsx         # List component with pagination
+├── store/
+│   ├── index.ts             # Redux store configuration
+│   └── api/
+│       └── todoApi.ts       # RTK Query API endpoints
+└── types/
+    └── todo.ts              # TypeScript type definitions
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Design System
 
-## Learn More
+The application features a modern design system with:
 
-To learn more about Next.js, take a look at the following resources:
+- **Light theme** with carefully selected color palette
+- **Gradient backgrounds** for visual depth
+- **Professional shadows** and rounded corners
+- **Consistent spacing** using Tailwind-inspired scale
+- **Focus states** for accessibility
+- **Smooth animations** (200-300ms transitions)
+- **Typography** using system font stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 API Integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Base URL**: `https://jsonplaceholder.typicode.com/todos`
+- **GET /todos**: Fetch todos with pagination (`_start`, `_limit`)
+- **POST /todos**: Create new todos
+- **Automatic retry** and error handling
+- **Background refetching** for fresh data
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recommended)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Connect your repository to [Vercel](https://vercel.com)
+2. Deploy automatically with Git integration
+
+### Other Platforms
+
+```bash
+npm run build
+npm run start
+```
+
+## 🔄 Revalidation Strategy
+
+- **Build-time**: Static generation for first 5 pages
+- **Runtime**: 60-second ISR revalidation
+- **Client-side**: RTK Query automatic refetching
+- **On-demand**: Manual refresh triggers
+
+## 🎯 Performance Features
+
+- **Code splitting** with Next.js automatic optimization
+- **Image optimization** with Next.js Image component
+- **Caching strategies** with RTK Query
+- **Minimal bundle size** with tree shaking
+- **Fast navigation** with prefetching
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Built with ❤️ using Next.js and modern web technologies.
