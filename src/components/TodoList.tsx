@@ -42,7 +42,7 @@ export default function TodoList({
     const halfButtons = Math.floor(maxButtons / 2);
 
     let startPage = Math.max(1, currentPage - halfButtons);
-    let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+    const endPage = Math.min(totalPages, startPage + maxButtons - 1);
 
     if (endPage - startPage < maxButtons - 1) {
       startPage = Math.max(1, endPage - maxButtons + 1);
